@@ -15,6 +15,7 @@ const NovoContatoTela = (props) => {
         setNovoContato(texto)
     }
 
+    //Altera estado dessa classe e não das outras até que texto seja final
     const novoTelefoneAlterado = (numero) => {
         setNovoTelefone(numero)
     }
@@ -24,9 +25,11 @@ const NovoContatoTela = (props) => {
     }
 
 
+    //só envia para reducers (dispatch) qdo aperta salvar 
     const adicionarContato = () => {
+        //cria ação 
         const acao = contatosActions.addContato(novoContato, novoTelefone, imagemURI)
-        //store.dispatch(acao)
+        //store.dispatch(acao) -> retirado pq nao tem acesso direto ao store
         dispatch(acao)
         setNovoContato('')
         setNovoTelefone('')
@@ -54,6 +57,7 @@ const NovoContatoTela = (props) => {
                 
                 />
 
+                {/* recebo a uri da imagem por fotoTirada, atualizo status e a uso no adicionarContato*/}
                 <TiraFoto
                     onFotoTirada={fotoTirada}
                 />

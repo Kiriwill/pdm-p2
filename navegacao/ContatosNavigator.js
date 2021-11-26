@@ -20,7 +20,8 @@ const container = (
                 headerStyle:{backgroundColor: Cores.primary},
                 headerTintColor: 'white'
             }}>
-            <Stack.Screen 
+            {/* DetalhesContato NAO é usada */}
+            <Stack.Screen
                 name="DetalhesDoContato" 
                 component={DetalhesDoContatoTela}
                 options={(props) => ({
@@ -31,6 +32,8 @@ const container = (
                 name="ListaDeContatos" 
                 component={ListaDeContatosTela}
                 options={(props) => ({
+                    //renderiza o botão direito dessa tela, headerRight é keyword reservada
+                    //https://reactnavigation.org/docs/elements/#headerright
                     headerRight: () => (
                         <HeaderButtons
                             HeaderButtonComponent={BotaoCabecalho}>
@@ -40,7 +43,6 @@ const container = (
                                     onPress={() => {
                                         props.navigation.navigate('NovoContato')
                                     }}
-                                
                                 />
                             
                         </HeaderButtons>
@@ -49,8 +51,13 @@ const container = (
                 })}
 
             />
-            <Stack.Screen name="Mapa" component={MapaTela}/>
-            <Stack.Screen name="NovoContato" component={NovoContatoTela}/>
+            {/* Mapa não é usado */}
+            <Stack.Screen 
+                name="Mapa" component={MapaTela}
+            />
+            <Stack.Screen 
+                name="NovoContato" component={NovoContatoTela}
+            />
         </Stack.Navigator>
     </NavigationContainer>
 )

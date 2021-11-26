@@ -10,8 +10,9 @@ import Cores from '../constantes/Cores'
 
 const ContatoItem = (props) => {
     return (
+        //card da flatList
         <TouchableOpacity
-            onPress={props.onSelect}
+            onPress={props.onSelect} //nao ta sendo usado
             style={styles.contatoItem}>
 
             <Image 

@@ -1,9 +1,9 @@
 class Contato {
-    constructor(id, titulo, telefone, imagemURI){ //imagemURI??
+    constructor(id, titulo, telefone, imagemURI){
         this.id = id
         this.titulo = titulo
         this.telefone = telefone
-        this.imagemURI = imagemURI //???
+        this.imagemURI = imagemURI
     }
 }
 

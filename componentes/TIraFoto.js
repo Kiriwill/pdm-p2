@@ -13,7 +13,9 @@ import * as ImagePicker from 'expo-image-picker'
 
 const TiraFoto = (props) => {
     const [imagemURI, setImagemURI] = useState()
+
     const tiraFoto = async () => {
+        //foto é promise por isso o async
         const foto = await ImagePicker.launchCameraAsync({
                 allowsEditing: true,
                 aspect: [16,9],

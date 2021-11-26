@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import ContatoItem from '../componentes/ContatoItem'
 
 function ListaDeContatosTela(props) {
+    //requisita a fatia de estado do Estado Centralizado
     const lugares = useSelector(estado => estado.contatos.contatos)
     return (
         <FlatList
